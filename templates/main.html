@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<title>{% block title %}{% endblock %}FYP填歌網</title>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='mdb/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{{ url_for('static', filename='mdb/css/mdb.min.css') }}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{{ url_for('static', filename='mdb/css/style.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='playercss.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='playerjs.js') }}"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <div class="row-eq-height">
+                <div class="col-xs-2 top-left-icon">
+                <img class ="center" src="https://img.icons8.com/ios/100/000000/musical-notes-filled.png" width="50" height="50" class="d-inline-block align-top" alt="">
+                </div>
+                <div class="col-xs-10">
+                    <div class="nav-title" href="#">
+                        多謝支持廣東歌
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav> 
+
+    <div class="container">
+    <div class="card bg-light">
+        <div class="card-header"> 1. 聽下首歌既某段</div>
+
+    <div class="card-body">
+
+      <div class="player-wrap">
+        <div class="player paused">
+          <div class="progress-bar">
+            <div class="runner"></div>
+          </div>
+          <div class="album-art">
+            <div class="cover"></div>
+          </div>
+
+          <div class="description">
+            <div class="title songNames_zh">{{songNames_zh}} </div>
+            <div class="sub-title singers_zh">{{singers_zh}} </div>
+          </div>
+          
+          <div class="visualizer">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+            
+          <div class="play-button">
+                <div class="lp-background"></div>
+                <i class="mdi mdi-play"></i>
+                <i class="mdi mdi-pause"></i>
+          </div>
+          
+        </div>
+      </div>
+
+</div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class= "input-lyrics-fluid">
+        <div class="card bg-light">
+            <div class="card-header">2. 寫低岩岩果段既歌詞</div>
+        <div class="card-body">
+        <div class="col-xs-12">
+            <input class = 'lyrics-input'list="lyricsList" name="lyrics" autocomplete="off" type='text'>
+            <label alt='呢度填歌詞' placeholder='多謝你為廣東歌出一份力!'></label>
+            <datalist class ="datalist" id="lyricsList">
+                {% for eachLine in lyrics %}
+                <option class='options' value={{eachLine}}>
+                {% endfor %}
+            </datalist>
+        </div>
+        </div>
+    </div>  
+</div> 
+</div> 
+
+
+    <div class="container">
+        <div class= "input-lyrics-fluid">
+        <div class="card bg-light">
+                <div class="card-header">3. (如有需要)可調教首歌頭尾開始既時間</div>
+            <div class="card-body">
+                <p>開始時間: <span class="startTime"></span></p>
+                <input name = "startRange" type="range" min="-3" max="3" step="0.1" value="0" class="slider startRange">
+                <hr class="timer-hr">
+                <p>結束時間: <span class="endTime"></span></p>
+                <input name = "endRange" type="range" min="-3" max="3" step="0.1" value="0" class="slider endRange">
+            </div>
+        </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class= "input-lyrics-fluid">
+                <div class="card bg-light">
+                    <div class="card-header">4. 如果無歌詞既，麻煩剔下呢格</div>
+                <div class="card-body">
+                    <div class= "input-Lyrics center">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input hasLyrics" id="customCheck1" name="hasLyrics" value="true">
+                            <label class="custom-control-label" for="customCheck1">段野無歌詞啵</label>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class= "input-lyrics-fluid">
+                    <div class="card bg-light">
+                        <div class="card-header">5. 搞掂</div>
+                    <div class="card-body">
+                        無問題既，禁粒Button 就可以繼續下一段錄音，多謝大家幫手！！
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class= "submit-btn">
+            <button class ="btn btn-primary btn-lg center" >下一首</button>   
+        </div>
+    <div class="footer"></div>
+
+    <audio class='audioClip' id='player'
+        src= {{audioSource}}>
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+
+<script>
+$(function(){
+    var player = document.getElementById('player');  
+    var startInterval =  '{{startTime}}' > 3 ? 3:0 
+    var durationInterval = '{{endTime}}' - '{{startTime}}'
+    var endInterval =  ('{{duration}}' -  '{{endTime}}' > 3 ? 3 : 0 )
+    var playInterval = endInterval - startInterval
+    var tmpCurrentTime = startInterval
+    var audioPlayDuration= durationInterval - startInterval -endInterval
+    var audioState = 'pause'
+    // initialize correct interval of the audio
+    $('.audioClip').prop("currentTime",tmpCurrentTime);
+
+    console.log("startInterval")
+    console.log(startInterval)
+    console.log("endInterval")
+    console.log(endInterval)
+    console.log("durationInterval")
+    console.log(durationInterval)
+    console.log("playInterval")
+    console.log(playInterval)
+    console.log("tmpCurrentTime")
+    console.log(tmpCurrentTime)
+    console.log("audioPlayDuration")
+    console.log(audioPlayDuration)
+
+    $('.startTime').html("0")
+    $('.endTime').html("0")
+
+    $(".endRange").on("input", function(e) {
+      var tmp = durationInterval - tmpCurrentTime - endInterval
+      audioPlayDuration = tmp + parseFloat(this.value) > 0 ? tmp + parseFloat(this.value) : tmp
+      console.log(audioPlayDuration)
+      $(".endTime").html(this.value)
+    });
+
+    $(".startRange").on("input",function(e) {
+      tmpCurrentTime =parseFloat(startInterval)  + parseFloat(this.value)
+      audioPlayDuration= durationInterval - tmpCurrentTime -endInterval
+      $('.audioClip').prop("currentTime",tmpCurrentTime);
+      $(".startTime").html(this.value)
+
+      var currentTime = player.currentTime;
+      var duration = player.duration;
+      $('.start_marker').css({'width':'1%'});
+      $('.start_marker').css({'left':(currentTime)/duration*100+'%'});
+    });
+
+    $( ".playAudio" ).click(function() {
+        $('.audioClip').trigger('stop');
+          $('.audioClip').trigger('play');
+          setTimeout(function(){
+            $('.audioClip').trigger('pause');
+            console.log( $('.audioClip').prop("currentTime"))
+            $('.audioClip').prop("currentTime",0)
+            console.log( $('.audioClip').prop("currentTime"))
+          }, 2000);
+    });
+    
+    // submit button click function
+    $(".submit-button").click(function(){
+        var postJSON = {
+            singer:"{{singers}}",
+            songName:"{{songNames}}",
+            start:parseFloat('{{startTime}}') + parseFloat($('.startTime').text()) + parseFloat(startInterval),
+            end: parseFloat('{{endTime}}') + parseFloat($('.endTime').text()) - parseFloat(endInterval),
+            lyrics:$('.lyrics-input').val(),
+            isLyrics:$('.hasLyrics').is(':checked'),
+            index: '{{index}}',
+        }
+        $.ajax({
+        url: "/submit_data",
+        type: "POST",
+        data: postJSON,
+        success: function(response) {
+            console.log(response)
+        },
+        error: function(xhr) {
+            //Do Something to handle error
+        }
+        });
+    }); 
+
+// js controlling the player 
+var $visualizers = $('.visualizer>div');
+var $progressBar = $('.progress-bar');
+var $progressBarRunner = $progressBar.find('.runner');
+var songLength = 200; //in seconds
+var percentage = 0
+var $time = $('.time');
+var $player = $('.player');
+
+var playRunner = null;
+
+function go() {
+  playRunner = setInterval(function() {
+    //visualizers
+    $visualizers.each(function() {
+      $(this).css('height', Math.random() * 90 + 10 + '%');
+    });
+    //progress bar
+    percentage += 0.15;
+    if (percentage > 100) percentage = 0;
+    $progressBarRunner.css('width', percentage + '%');
+
+    $time.text(calculateTime(songLength, percentage));
+  }, 250);
+};
+
+$('.play-button').on('click', function() {
+    if(audioState === 'pause'){
+        // change the state and play the audio
+        $player.removeClass('paused').toggleClass('playing');
+        audioState = 'play'
+        $('.audioClip').trigger('play');
+        //stop after playing specific interval
+        setTimeout(function(){
+        if(audioState === 'play'){
+            $('.audioClip').trigger('pause');
+            $('.audioClip').prop("currentTime",tmpCurrentTime)
+            $player.removeClass('playing').toggleClass('paused');
+            audioState = 'pause'
+        }
+        }, audioPlayDuration*1000);
+    }else{
+        // change the state and stop the audio
+        audioState = 'pause'
+        $('.audioClip').trigger('pause');
+        $player.removeClass('playing').toggleClass('paused');
+    }
+  if (playRunner) {
+    clearInterval(playRunner);
+    playRunner = null;
+    $time.text(calculateTime(songLength, 100));
+  } else {
+    percentage = 0;
+    go();
+  }
+});
+
+$('.progress-bar').on('click', function(e) {
+  var posY = $(this).offset().left;
+  var clickY = e.pageX - posY;
+  var width = $(this).width();
+
+  percentage = clickY / width * 100;
+});
+
+function calculateTime(songLength, percentage) {
+  //time
+  var currentLength = songLength / 100 * percentage;
+  var minutes = Math.floor(currentLength / 60);
+  var seconds = Math.floor(currentLength - (minutes * 60));
+  if (seconds <= 9) {
+    return (minutes + ':0' + seconds);
+  } else {
+    return (minutes + ':' + seconds);
+  }
+}
+
+clearInterval(playRunner);
+});
+</script>
+</body>
