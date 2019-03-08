@@ -1,0 +1,190 @@
+
+/* Main Container */
+body {
+  color: #585858;
+  font-family: 'cwTeXKai', serif;
+  font-family: arial, sans-sarif;
+  font-weight: 400;
+  background-color: #f5f5f5;
+  /* text-align: center; */
+}
+
+/* Slider Bat */
+.slidecontainer {
+  width: 50%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #ffffff;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+/* Progress Bar */
+.hp_slide{
+  width:100%;
+  background:green;
+  height:25px;
+}
+.hp_range{
+  width:0;
+  background:red;
+  height:25px;
+}
+
+.start_marker{
+  width:0;
+  background:yellow;
+  height:25px;
+}
+
+.end_marker{
+  width:0;
+  background:peru;
+  height:25px;
+}
+
+.timer-hr{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: 5;
+  border-top: 2px solid #eee;
+}
+
+/* Input Field */
+.input-lyrics-fluid{
+  margin-top: 25px;
+  padding:0;
+}
+.datalist{
+  width:90%;
+}
+.options{
+  width:90%;
+}
+input[list]{
+  width:90%;
+}
+
+input[type="text"] {
+  font-size: 13px;
+  color:#777;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(3em + 2px);
+  margin: 0 0 -1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1.5em;
+  background: #fff;
+  resize: none;
+  outline: none;
+}
+input[type="text"][required]:focus {
+  border-color: #fff;
+}
+input[type="text"][required]:focus + label[placeholder]:before {
+  color:#fff;
+}
+input[type="text"][required]:focus + label[placeholder]:before,
+input[type="text"][required]:valid + label[placeholder]:before {
+  transition-duration: 0.2s;
+  -webkit-transform: translate(0, -1.5em) scale(0.9, 0.9);
+          transform: translate(0, -1.5em) scale(0.9, 0.9);
+}
+input[type="text"][required]:invalid + label[placeholder][alt]:before {
+  content: attr(alt);
+}
+input[type="text"][required] + label[placeholder] {
+  color:#898989;
+  display: block;
+  pointer-events: none;
+  line-height: 1.25em;
+  margin-top: calc(-3em - 2px);
+  margin-bottom: calc((3em - 1em) + 2px);
+}
+input[type="text"][required] + label[placeholder]:before {
+  content: attr(placeholder);
+  display: inline-block;
+  margin: 0 calc(1em + 2px);
+  padding: 0 2px;
+  /* color: #898989; */
+  white-space: nowrap;
+  transition: 0.3s ease-in-out;
+  /* background-image: linear-gradient(to bottom, #fff, #fff); */
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.submit-btn{
+  margin-top: 15px;
+}
+
+/* Navigation */
+.nav-title{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+  display: block;
+  font-weight: 500;
+  color:#585858;
+}
+
+.center {
+  margin: auto;
+  vertical-align: middle;
+  display: block;
+  text-align: center;
+}
+
+.bg-light{
+  background-color:#3c93ad;
+}
+
+/*
+ * Row with equal height columns
+ * --------------------------------------------------
+ */
+ .row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:  flex;
+}
+
+.top-left-icon{
+  padding-left: 0px;
+}
+
+.footer{
+  height:30px;
+}
