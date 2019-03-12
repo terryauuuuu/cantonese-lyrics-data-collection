@@ -79,11 +79,24 @@ body {
   border-top: 2px solid #eee;
 }
 
+.timer-text{
+  text-align: center;
+}
+
+.submit-button-outer{
+  margin-bottom: 30px;
+}
+
 /* Input Field */
 .input-lyrics-fluid{
   margin-top: 25px;
   padding:0;
 }
+
+.input-Lyrics-area{
+  
+}
+
 .datalist{
   width:90%;
 }

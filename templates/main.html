@@ -6,6 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -19,6 +23,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -31,6 +37,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='playercss.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='playerjs.js') }}"></script>
+    <script src="{{ url_for('static', filename='loading.js') }}"></script>
+    <link href="{{ url_for('static', filename='loading.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='popupmodal/js/popupmodal.js') }}"></script>
+    <link href="{{ url_for('static', filename='popupmodal/css/popupmodal.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -51,7 +61,7 @@
 
     <div class="container">
     <div class="card bg-light">
-        <div class="card-header"> 1. 聽下首歌既某段</div>
+        <div class="card-header"> 1. 聽下呢首歌某一Part</div>
 
     <div class="card-body">
 
@@ -68,56 +78,6 @@
             <div class="title songNames_zh">{{songNames_zh}} </div>
             <div class="sub-title singers_zh">{{singers_zh}} </div>
           </div>
-          
-          <div class="visualizer">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
             
           <div class="play-button">
                 <div class="lp-background"></div>
@@ -132,11 +92,33 @@
     </div>
 </div>
 
+<div class="container">
+    <div class= "input-lyrics-fluid">
+    <div class="card bg-light">
+            <div class="card-header">2. (如有需要)可調教首歌頭尾開始時間</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <p class="timer-text">開頭: <span class="startTime"></span></p>
+                </div>
+                <div class="col">
+                    <p class="timer-text">結尾: <span class="endTime"></span></p>
+                </div>
+                <div class="col">
+                    <p class="timer-text">段落長: <span class="timeDuration">秒</span></p>
+                </div>
+            </div>
+            <hr class="timer-hr">
+            <div id="slider-range"></div>
+        </div>
+    </div>
+    </div>
+</div>
 
 <div class="container">
     <div class= "input-lyrics-fluid">
         <div class="card bg-light">
-            <div class="card-header">2. 寫低岩岩果段既歌詞</div>
+            <div class="card-header">3. 寫低啱啱果段歌詞</div>
         <div class="card-body">
         <div class="col-xs-12">
             <input class = 'lyrics-input'list="lyricsList" name="lyrics" autocomplete="off" type='text'>
@@ -153,30 +135,17 @@
 </div> 
 
 
-    <div class="container">
-        <div class= "input-lyrics-fluid">
-        <div class="card bg-light">
-                <div class="card-header">3. (如有需要)可調教首歌頭尾開始既時間</div>
-            <div class="card-body">
-                <p>開始時間: <span class="startTime"></span></p>
-                <input name = "startRange" type="range" min="-3" max="3" step="0.1" value="0" class="slider startRange">
-                <hr class="timer-hr">
-                <p>結束時間: <span class="endTime"></span></p>
-                <input name = "endRange" type="range" min="-3" max="3" step="0.1" value="0" class="slider endRange">
-            </div>
-        </div>
-            </div>
-        </div>
+
 
         <div class="container">
             <div class= "input-lyrics-fluid">
                 <div class="card bg-light">
-                    <div class="card-header">4. 如果無歌詞既，麻煩剔下呢格</div>
-                <div class="card-body">
+                    <div class="card-header">4. 如果無歌詞，麻煩剔下呢格</div>
+                <div class="card-body input-Lyrics-area">
                     <div class= "input-Lyrics center">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input hasLyrics" id="customCheck1" name="hasLyrics" value="true">
-                            <label class="custom-control-label" for="customCheck1">段野無歌詞啵</label>
+                            <label class="custom-control-label" for="customCheck1">段野無歌詞/唔喺廣東話嚟啵</label>
                         </div>
                     </div>
                     </div>
@@ -195,10 +164,17 @@
                 </div>
             </div>
 
-        <div class= "submit-btn">
-            <button class ="btn btn-primary btn-lg center" >下一首</button>   
+        <div class= "submit-button-outer submit-btn">
+            <button class ="submit-button btn btn-primary btn-lg center" >下一首</button>  
         </div>
-    <div class="footer"></div>
+
+
+    <footer class="page-footer font-small blue">
+        <div class="footer-copyright text-center py-3">
+            Declaration: Data collected shall be used purely for academic purpose only. 
+        </div>
+    </footer>
+        
 
     <audio class='audioClip' id='player'
         src= {{audioSource}}>
@@ -206,39 +182,91 @@
             <code>audio</code> element.
     </audio>
 
+
+
 <script>
 $(function(){
+
+//decleare variable
+    var index = '{{index}}'
+    var startTime = '{{startTime}}'
+    var endTime = '{{endTime}}'
+    var duration = '{{duration}}'
+    var index = '{{index}}'
+    var singers ='{{singers}}'
+    var songNames = "{{songNames}}"
+    var lyricsArray =[]
     var player = document.getElementById('player');  
-    var startInterval =  '{{startTime}}' > 3 ? 3:0 
-    var durationInterval = '{{endTime}}' - '{{startTime}}'
-    var endInterval =  ('{{duration}}' -  '{{endTime}}' > 3 ? 3 : 0 )
+    var startInterval =  startTime > 3 ? 3:0 
+    var durationInterval = endTime - startTime
+    var endInterval =  (duration -  endTime > 3 ? 3 : 0 )
     var playInterval = endInterval - startInterval
     var tmpCurrentTime = startInterval
-    var audioPlayDuration= durationInterval - startInterval -endInterval
+    var audioPlayDuration= (durationInterval - startInterval -endInterval)
     var audioState = 'pause'
-    // initialize correct interval of the audio
+
+    var $player = $('.player');
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1;
+    var isWindows = ua.indexOf("windows") > -1;
+    
+    console.log("startTime: "+ startTime)
+    console.log("endTime: "+ endTime)
+    console.log("duration: " + duration)
+    // console.log("startInterval: " + startInterval)
+    console.log("endInterval: " + endInterval)
+    console.log("durationInterval: " + durationInterval)
+    console.log("playInterval: " + playInterval)
+    console.log("tmpCurrentTime: " + tmpCurrentTime)
+    console.log("audioPlayDuration: "+ audioPlayDuration)
+
+    $( "#slider-range" ).slider({
+        range: true,
+        min: 0-startInterval,
+        max: 3+audioPlayDuration,
+        step: 0.1,
+        values: [ 0, audioPlayDuration],
+        animate: "fast",
+        slide: function( event, ui ) {
+
+            var head =  (ui.values[0] * -1);
+            var totalLength = ui.values[1] + head
+            audioPlayDuration = totalLength
+            tmpCurrentTime = startInterval-head
+
+            $('.startTime').html(sigFig(ui.values[0]))
+            $('.endTime').html(sigFig(ui.values[1]))
+            $(".timeDuration").html(sigFig(totalLength));
+            // $('.audioClip').prop("currentTime",tmpCurrentTime);
+            $('.audioClip').prop("currentTime",tmpCurrentTime)
+        }
+    });
+
+
+// initialize correct interval of the audio
     $('.audioClip').prop("currentTime",tmpCurrentTime);
+    $('.startTime').html("0.00")
+    $('.endTime').html(sigFig(audioPlayDuration))
+    $(".timeDuration").html(sigFig(audioPlayDuration))
+    $(".hasLyrics").prop("checked", false);
 
-    console.log("startInterval")
-    console.log(startInterval)
-    console.log("endInterval")
-    console.log(endInterval)
-    console.log("durationInterval")
-    console.log(durationInterval)
-    console.log("playInterval")
-    console.log(playInterval)
-    console.log("tmpCurrentTime")
-    console.log(tmpCurrentTime)
-    console.log("audioPlayDuration")
-    console.log(audioPlayDuration)
+//IOS: use jq plugin for auto-complete
+    if(!(isAndroid || isWindows)) {
+        $("option").each(function(){
+            lyricsArray.push($(this).val())
+        });
 
-    $('.startTime').html("0")
-    $('.endTime').html("0")
+        $( ".lyrics-input" ).autocomplete({
+            source: lyricsArray
+        });
+        //rename datalist to hide it in IOS
+        $(".datalist").prop("id","newID")
+    }
+
 
     $(".endRange").on("input", function(e) {
       var tmp = durationInterval - tmpCurrentTime - endInterval
       audioPlayDuration = tmp + parseFloat(this.value) > 0 ? tmp + parseFloat(this.value) : tmp
-      console.log(audioPlayDuration)
       $(".endTime").html(this.value)
     });
 
@@ -254,66 +282,41 @@ $(function(){
       $('.start_marker').css({'left':(currentTime)/duration*100+'%'});
     });
 
-    $( ".playAudio" ).click(function() {
-        $('.audioClip').trigger('stop');
-          $('.audioClip').trigger('play');
-          setTimeout(function(){
-            $('.audioClip').trigger('pause');
-            console.log( $('.audioClip').prop("currentTime"))
-            $('.audioClip').prop("currentTime",0)
-            console.log( $('.audioClip').prop("currentTime"))
-          }, 2000);
+// handle clicking box
+    $(".input-Lyrics-area").click(function() {
+        if ($('.hasLyrics').is(':checked')){
+            $(".hasLyrics").prop("checked", false);
+            $(".lyrics-input").prop('disabled', false);
+            $(".startRange").prop('disabled', false);
+            $(".endRange").prop('disabled', false);
+        }else{
+            $(".hasLyrics").prop("checked", true );
+            $(".lyrics-input").prop('disabled', true);
+            $(".endRange").prop('disabled', true);
+            $(".startRange").prop('disabled', true);
+        }
     });
-    
-    // submit button click function
+
+// submit button click function
     $(".submit-button").click(function(){
-        var postJSON = {
-            singer:"{{singers}}",
-            songName:"{{songNames}}",
-            start:parseFloat('{{startTime}}') + parseFloat($('.startTime').text()) + parseFloat(startInterval),
-            end: parseFloat('{{endTime}}') + parseFloat($('.endTime').text()) - parseFloat(endInterval),
-            lyrics:$('.lyrics-input').val(),
-            isLyrics:$('.hasLyrics').is(':checked'),
-            index: '{{index}}',
-        }
-        $.ajax({
-        url: "/submit_data",
-        type: "POST",
-        data: postJSON,
-        success: function(response) {
-            console.log(response)
+        popup.confirm( { 
+            content: '<strong>呢段歌詞如下:</strong><br><br>' + $('.lyrics-input').val(),
+            keyboard : false,
+            btn_align : 'right',
+            effect : 'none',
+            default_btns : {
+                ok : '提交',
+                cancel:'諗諗'
+            }
         },
-        error: function(xhr) {
-            //Do Something to handle error
-        }
-        });
-    }); 
-
-// js controlling the player 
-var $visualizers = $('.visualizer>div');
-var $progressBar = $('.progress-bar');
-var $progressBarRunner = $progressBar.find('.runner');
-var songLength = 200; //in seconds
-var percentage = 0
-var $time = $('.time');
-var $player = $('.player');
-
-var playRunner = null;
-
-function go() {
-  playRunner = setInterval(function() {
-    //visualizers
-    $visualizers.each(function() {
-      $(this).css('height', Math.random() * 90 + 10 + '%');
+        function(param){
+            if(param.proceed){
+                submitData()
+            }
+        } 
+         );
     });
-    //progress bar
-    percentage += 0.15;
-    if (percentage > 100) percentage = 0;
-    $progressBarRunner.css('width', percentage + '%');
 
-    $time.text(calculateTime(songLength, percentage));
-  }, 250);
-};
 
 $('.play-button').on('click', function() {
     if(audioState === 'pause'){
@@ -323,50 +326,122 @@ $('.play-button').on('click', function() {
         $('.audioClip').trigger('play');
         //stop after playing specific interval
         setTimeout(function(){
-        if(audioState === 'play'){
-            $('.audioClip').trigger('pause');
-            $('.audioClip').prop("currentTime",tmpCurrentTime)
-            $player.removeClass('playing').toggleClass('paused');
-            audioState = 'pause'
-        }
+            if(audioState === 'play'){
+                $('.audioClip').trigger('pause');
+                $('.audioClip').prop("currentTime",tmpCurrentTime)
+                $player.removeClass('playing').toggleClass('paused');
+                audioState = 'pause'
+            }
         }, audioPlayDuration*1000);
     }else{
-        // change the state and stop the audio
+        // change the state and reset the audio
         audioState = 'pause'
+        counter += 1
         $('.audioClip').trigger('pause');
+        $('.audioClip').prop("currentTime",tmpCurrentTime)
+        // var currentTime = player.currentTime;
+        // audioPlayDuration = audioPlayDuration - (tmpCurrentTime-currentTime)
         $player.removeClass('playing').toggleClass('paused');
     }
-  if (playRunner) {
-    clearInterval(playRunner);
-    playRunner = null;
-    $time.text(calculateTime(songLength, 100));
-  } else {
-    percentage = 0;
-    go();
-  }
 });
 
-$('.progress-bar').on('click', function(e) {
-  var posY = $(this).offset().left;
-  var clickY = e.pageX - posY;
-  var width = $(this).width();
+    //re-initialize the stuufs once a new song incoming
+    function init(){
+        startInterval =  startTime > 3 ? 3:0 
+        durationInterval = endTime - startTime
+        endInterval =  (duration -  endTime > 3 ? 3 : 0 )
+        playInterval = endInterval - startInterval
+        tmpCurrentTime = startInterval
+        audioPlayDuration= durationInterval - startInterval -endInterval
+        audioState = 'pause'
 
-  percentage = clickY / width * 100;
-});
+        // initialize correct interval of the audio
+        $('.audioClip').prop("currentTime",tmpCurrentTime);
+        $(".startRange").val(0);
+        $(".endRange").val(0);
+        $('.startTime').html("0")
+        $('.endTime').html("0")
+        $(".hasLyrics").prop("checked", false);
+        $(".lyrics-input").prop('disabled', false);
+        $(".startRange").prop('disabled', false);
+        $(".endRange").prop('disabled', false);
 
-function calculateTime(songLength, percentage) {
-  //time
-  var currentLength = songLength / 100 * percentage;
-  var minutes = Math.floor(currentLength / 60);
-  var seconds = Math.floor(currentLength - (minutes * 60));
-  if (seconds <= 9) {
-    return (minutes + ':0' + seconds);
-  } else {
-    return (minutes + ':' + seconds);
-  }
-}
+        //change the lyrics if IOS
+        if(!isAndroid || isWindows) {
+            var lyricsArray =[]
+            $("option").each(function(){
+                lyricsArray.push($(this).val())
+            });
+            // console.log(lyricsArray)
+            $( ".lyrics-input" ).autocomplete({
+                source: lyricsArray
+            });
+        }
+    }
 
-clearInterval(playRunner);
+    // submit data function
+    function submitData() {
+        var sendStartTime = parseFloat(startTime) + parseFloat($('.startTime').text()) + parseFloat(startInterval)
+        var sendEndTime = sendStartTime +  parseFloat($(".timeDuration").text())
+
+        $('body').loading({message: 'Send緊上Server...'});
+                    var postJSON = {
+            singer:singers,
+            songName:songNames,
+            start:sendStartTime,
+            end: sendEndTime,
+            lyrics:$('.lyrics-input').val(),
+            isNotLyrics:$('.hasLyrics').is(':checked'),
+            index: index,
+            submitDate: Date.now()
+        }
+        $.ajax({
+            url: "/submit_data",
+            type: "POST",
+            data: postJSON,
+            success: function(res) {
+
+                res = JSON.parse(res)
+                songNames = res.songNames
+                singers = res.singers
+                startTime = res.startTime
+                endTime = res.endTime
+                index = res.index
+                duration = res.duration
+
+                $('.songNames_zh').html(res.songNames_zh)
+                $('.singers_zh').html(res.singers_zh)
+                $(".audioClip").attr("src", res.audioSource)
+                $('.lyrics-input').val('')
+                x = res.lyrics.map(function(val,index) {
+                    return "<option class='options' value=" + val + ">"
+                });
+                $(".datalist").html(x)
+                
+                init();
+            
+                $('body').loading({
+                    theme: 'dark',
+                    message: '搞掂!多謝你呀!有下一首啦!',
+                    stoppable: true
+                });
+
+                setTimeout(function(){
+                    $('body').loading('stop');
+                    $(window).scrollTop(0);
+                }, 1500);
+            },
+            error: function(xhr) {
+                //Do Something to handle error
+            }
+        });
+    }; 
+    
+    function sigFig(x) {
+        return Number.parseFloat(x).toFixed(2);
+    }
+
+
 });
 </script>
 </body>
