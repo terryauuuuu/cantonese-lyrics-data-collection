@@ -201,3 +201,18 @@ input[type="text"][required] + label[placeholder]:before {
 .footer{
   height:30px;
 }
+
+.reset-btn{
+  widtH: 100%;
+  margin-top: 15px;
+}
+
+.lyrics-input-remark{
+  font-size: xx-small;
+}
+
+
+.lyrics-input-remark-red{
+  color: #dc3545;
+  font-weight: 600;
+}

@@ -51,8 +51,8 @@ body .player .album-art .cover, html .player .album-art .cover {
 body .player .description, html .player .description {
   position: relative;
   width: 75%;
-  height: 50px;
-  top: 20%;
+  height: 60px;
+  top: 15%;
   left: 85px;
   overflow: hidden;
 }
@@ -83,7 +83,8 @@ body .player .play-button, html .player .play-button {
 }
 body .player .play-button .lp-background, html .player .play-button .lp-background {
   transition: all 0.35s ease;
-  background: url("http://i65.tinypic.com/v5wy3b.png");
+  /* background: url("http://i65.tinypic.com/v5wy3b.png"); */
+  background: url("./jpg/playButton.png");
   background-size: cover;
   animation: spin 1s infinite linear;
   width: 100%;

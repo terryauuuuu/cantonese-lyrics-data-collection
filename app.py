@@ -50,14 +50,14 @@ def index():
    songNames = result['songNames']
    singers_zh = result['singers_zh']
    songNames_zh = result['songNames_zh']
-   startTime = result['startTimes'] < 3 and result['startTimes'] or result['startTimes'] -3
-   endTime = (result['audioDuration'] - result['endTimes']) < 3 and result['endTimes'] or result['endTimes'] +3
+   startTime = result['startTimes'] < 5 and result['startTimes'] or result['startTimes'] -5
+   endTime = (result['audioDuration'] - result['endTimes']) < 5 and result['endTimes'] or result['endTimes'] +5
    duration = result['audioDuration'] 
    rawFormat = result['rawFormat']
    index = result['index_id']
 
 
-
+# &lt;&gt;&lt;
    # read the text file
    txtPath = singers + "_" + songNames  + ".txt"
    # f = open("/home/vmagent/app/static/lyrics/"+ txtPath, encoding='utf-8')
@@ -65,14 +65,16 @@ def index():
    lyrics = []
    for line in f:
       formatted_lyrics =''
-      line = line.replace(")","").replace("(","").replace("：","")
+      line = line.replace(")","").replace("(","").replace("：","").replace("&lt;","").replace("&gt;","")
       for letter in line:
          letter = re.sub('[a-zA-Z]', '',letter)
+         letter = re.sub('[=&!@#$-/]', '', letter)
+         letter = re.sub('\ |\?|\.|\!|\/|\;|\:', '', letter)
          formatted_lyrics += letter
 
-      audioSource = "https://storage.googleapis.com/audio-data-u3519936/audio_raw_cutted/"+str(index)+'.wav'
+      audioSource = "https://storage.googleapis.com/audio-data-u3519936/audio_raw_cutted_5/"+str(index)+'.wav'
       if len(formatted_lyrics) > 0 and formatted_lyrics !='\n' :
-         lyrics.append(formatted_lyrics)
+         lyrics.append(formatted_lyrics.replace("\n",""))
 
    return render_template('main.html',
                            index = index,
@@ -99,7 +101,7 @@ def submit_data():
    isNotLyrics =  request.form['isNotLyrics']
    submitDate =  request.form['submitDate']
    # if the lyrics part is not null, then insert the record and refresh to next song
-   if (lyrics != ''):
+   if (lyrics != '' or isNotLyrics== bool(True)):
       conn = sqlite3.connect('database.db')
       # Insert the record
       params = (index, singer, songName, start, end, lyrics, isNotLyrics,submitDate)
@@ -123,8 +125,8 @@ def submit_data():
    songNames = result['songNames']
    singers_zh = result['singers_zh']
    songNames_zh = result['songNames_zh']
-   startTime = result['startTimes'] < 3 and result['startTimes'] or result['startTimes'] -3
-   endTime = (result['audioDuration'] - result['endTimes']) < 3 and result['endTimes'] or result['endTimes'] +3
+   startTime = result['startTimes'] < 5 and result['startTimes'] or result['startTimes'] -5
+   endTime = (result['audioDuration'] - result['endTimes']) < 5 and result['endTimes'] or result['endTimes'] +5
    duration = result['audioDuration'] 
    rawFormat = result['rawFormat']
    index = result['index_id']
@@ -136,9 +138,11 @@ def submit_data():
    lyrics = []
    for line in f:
       formatted_lyrics =''
-      line = line.replace(")","").replace("(","").replace("：","")
+      line = line.replace(")","").replace("(","").replace("：","").replace("&lt;","").replace("&gt;","")
       for letter in line:
          letter = re.sub('[a-zA-Z]', '',letter)
+         letter = re.sub('[=&!@#$-/]', '', letter)
+         letter = re.sub('\ |\?|\.|\!|\/|\;|\:', '', letter)
          formatted_lyrics += letter
 
       audioSource = "https://storage.googleapis.com/audio-data-u3519936/audio_raw_cutted/"+str(index)+'.wav'
