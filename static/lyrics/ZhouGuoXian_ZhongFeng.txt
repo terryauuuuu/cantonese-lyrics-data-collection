@@ -1,8 +1,4 @@
-
-Lyricist：小克
-Composer：周國賢
-Arranger：周國賢
-監製：周國賢．Goro@HeearMusic
+﻿
 人數剩低多少
 越數
 越有上升數字怎預料
@@ -71,15 +67,3 @@ Arranger：周國賢
 靈魂萬千都簇擁
 門關起多悲痛
 門打開新生放送
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">錢多多</font>
-</strong>
-for
-sharing
-the
-lyric.</li></ol>

@@ -1,4 +1,4 @@
-
+﻿
 就散席了
 人客急將美酒喝掉
 趕於舞曲奏盡前離坐
@@ -49,15 +49,3 @@
 卻怕在今晚之後
 不知有誰來迫我
 轉唱另一些歌
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">野口</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

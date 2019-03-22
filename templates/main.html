@@ -10,38 +10,34 @@
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static', filename='mdb/css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="{{ url_for('static', filename='mdb/css/mdb.min.css') }}" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="{{ url_for('static', filename='mdb/css/style.css') }}" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    
+    <link href="{{ url_for('static', filename='mdb/css/style.css') }}" rel="stylesheet">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <link href="{{ url_for('static', filename='mdb/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='mdb/css/mdb.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='playercss.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <!-- <script src="{{ url_for('static', filename='playerjs.js') }}"></script> -->
     <script src="{{ url_for('static', filename='loading.js') }}"></script>
     <link href="{{ url_for('static', filename='loading.css') }}" rel="stylesheet">
     <script src="{{ url_for('static', filename='popupmodal/js/popupmodal.js') }}"></script>
     <link href="{{ url_for('static', filename='popupmodal/css/popupmodal.css') }}" rel="stylesheet">
     
+    <script src="{{ url_for('static', filename='SnackBar/dist/snackbar.min.js') }}"></script>
+    <link href="{{ url_for('static', filename='SnackBar/dist/snackbar.min.css') }}" rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
@@ -50,6 +46,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.default.css" rel="stylesheet">
+    <!-- <script src="https://unpkg.com/wavesurfer.js"></script> -->
 
 </head>
 
@@ -68,6 +65,8 @@
             </div>
         </div>
     </nav> 
+
+    <!-- <div id="waveform"></div> -->
 
     <div class="container">
         <div class="card bg-light">
@@ -105,7 +104,7 @@
     <div class="container">
         <div class= "input-lyrics-fluid">
         <div class="card bg-light">
-                <div class="card-header">2. (如有需要)可調教首歌頭尾開始時間</div>
+                <div class="card-header">2. (如播唔曬成句)可調教下首歌頭尾時間</div>
             <div class="card-body">
                 <div class="row">
                     <div class="col">
@@ -115,7 +114,7 @@
                         <p class="timer-text">結尾: <span class="endTime"></span></p>
                     </div>
                     <div class="col">
-                        <p class="timer-text">段落長: <span class="timeDuration">秒</span></p>
+                        <p class="timer-text">長度: <span class="timeDuration">秒</span></p>
                     </div>
                 </div>
                 <hr class="timer-hr">
@@ -129,8 +128,29 @@
     <div class="container">
         <div class= "input-lyrics-fluid">
             <div class="card bg-light">
-                <div class="card-header">3. 寫低啱啱果段歌詞</div>
+                <div class="card-header">3. 寫低段歌詞 </div>
             <div class="card-body">
+                <div class ="sub-input-grp">
+                    <button type="button" id="button_bw" class="sub-input-btn forwd-start-btn">
+                        <i class="fa fa-backward"></i>
+                    </button>
+                    
+                    <button type="button" id="button_bw" class="sub-input-btn backwd-start-btn">
+                        <i class="fa fa-forward"></i>
+                    </button>
+
+                    <button type="button" id="button_play" class="sub-input-btn sub-play-btn play-button" >
+                        <i class="fa fa-play"></i>
+                    </button>
+                    
+                    <button type="button" id="button_bw" class="sub-input-btn forwd-end-btn">
+                        <i class="fa fa-backward"></i>
+                    </button>
+                    
+                    <button type="button" id="button_bw" class="sub-input-btn backwd-end-btn">
+                        <i class="fa fa-forward"></i>
+                    </button>
+                </div>
                 <input class = 'lyrics-input' id="input-tags" type='text'>
                 <div class ="lyrics-input-remark" >
                     <p class="card-text">
@@ -144,7 +164,7 @@
                 <div class= "input-Lyrics center">
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input hasLyrics" id="customCheck1" name="hasLyrics" value="true">
-                        <label class="custom-control-label" for="customCheck1">段野無歌詞/唔喺廣東話嚟啵</label>
+                        <label class="custom-control-label" for="customCheck1">段野無歌詞/ 唔喺廣東話嚟啵</label>
                     </div>
                 </div>
             </div>
@@ -206,14 +226,24 @@ $(function(){
     var player = document.getElementById('player');  
     var startInterval =  startTime > 5 ? 5 : 0 
     var durationInterval = endTime - startTime
-    var endInterval =  (duration -  endTime > 5 ? 5 : 0 )
+    var endInterval =  (duration -  endTime > 0 ? 5 : 0 )
     var tmpCurrentTime = startInterval
     var audioPlayDuration= (durationInterval - startInterval -endInterval)
     var audioState = 'pause'
     var audioSource = '{{audioSource}}'
     var $player = $('.player');
 
+    // var wavesurfer = WaveSurfer.create({
+    //     container: '#waveform',
+    //     waveColor: 'violet',
+    //     progressColor: 'purple'
+    // });
     
+    // wavesurfer.load(audioSource);
+    // wavesurfer.on('ready', function () {
+    //     wavesurfer.play();
+    // });
+
     console.log("index: "+ index)
     console.log("startTime: "+ startTime)
     console.log("endTime: "+ endTime)
@@ -294,6 +324,53 @@ $(function(){
         $(".timeDuration").html(sigFig(audioPlayDuration));
     });
 
+//fast-top-end-button
+    $(".forwd-start-btn").click(function() {
+        btnPanel(0.1,0);
+    });
+
+    $(".backwd-start-btn").click(function() {
+        btnPanel(-0.1,0);
+    });
+
+    $(".forwd-end-btn").click(function() {
+        btnPanel(0,0.1);
+    });
+
+    $(".backwd-end-btn").click(function() {
+        btnPanel(0,-0.1);
+    });
+
+    
+    function btnPanel(startVar,endVar){
+        var min = 0-startInterval;
+        var max = 5+audioPlayDuration;
+        var start = parseFloat($('.startTime').text())
+        var end = parseFloat($('.endTime').text())
+        var resetStart = sigFig(start - startVar)
+        var resetEnd = sigFig(end - endVar)
+
+        if(resetStart >= min  && resetEnd <= max && resetEnd > resetStart ){
+            $('.startTime').html(resetStart)
+            $('.endTime').html(resetEnd)
+            var head =  parseFloat(resetStart * -1);
+            var totalLength = parseFloat(resetEnd) + head
+            audioPlayDuration = totalLength
+            tmpCurrentTime = startInterval-head
+            console.log(tmpCurrentTime)
+            console.log(audioPlayDuration)
+            $('.startTime').html(resetStart)
+            $(".timeDuration").html(sigFig(audioPlayDuration));
+            pauseAudio();
+            loadSound();
+            $( "#slider-range" ).slider({
+                values: [ resetStart , resetEnd],
+            });
+        }
+        Snackbar.show({
+            text: '首歌會喺 ' + resetStart  +' 秒播, ' + resetEnd + " 秒完",
+            duration: 3000});
+    }
 // handle clicking box
     $(".input-Lyrics-area").click(function() {
         if ($('.hasLyrics').is(':checked')){
@@ -349,13 +426,18 @@ $('.play-button').on('click', function() {
 function pauseAudio(){
     if(audioState === 'play'){
         $player.removeClass('playing').toggleClass('paused');
+        $(".sub-play-btn").removeClass('btn-success'); 
+        $(".sub-play-btn > i").removeClass('fa fa-pause').toggleClass('fa fa-play');
     }
     sound.pause();
     audioState = 'pause'
+    
 }
 
 function playAudio(){
     sound.play('playTime');
+    $(".sub-play-btn").toggleClass('btn-success'); 
+    $(".sub-play-btn > i").removeClass('fa fa-play').toggleClass('fa fa-pause');
     $player.removeClass('paused').toggleClass('playing');
     audioState = 'play'
 }
@@ -363,16 +445,18 @@ function playAudio(){
 function loadSound(){
     sound = new Howl({
                 src: audioSource,
+                html5: true,
                 sprite: {
                     playTime: [tmpCurrentTime*1000, audioPlayDuration*1000],
                 }
             });       
     sound.once('load', function(){
+        
     });
+
     sound.on('end', function(){
         console.log('Finished!');
-        $player.removeClass('playing').toggleClass('paused');
-        audioState = 'pause'
+        pauseAudio();
     });
 }
     //re-initialize the stuufs once a new song incoming
@@ -422,7 +506,7 @@ function loadSound(){
             lyrics:$('.lyrics-input').val(),
             isNotLyrics:$('.hasLyrics').is(':checked'),
             index: index,
-            submitDate: Date.now()
+            submitDate: new Date()
         }
         $.ajax({
             url: "/submit_data",

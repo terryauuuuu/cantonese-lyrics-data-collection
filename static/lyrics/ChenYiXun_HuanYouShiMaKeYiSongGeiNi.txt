@@ -1,14 +1,4 @@
-
-Lyricist：周耀輝
-Composer：Davy
-Chan
-Arranger：劉志遠
-監製：Davy
-Chan/
-C
-Y
-Kong/
-陳奕迅
+﻿陳奕迅
 送過你一剎
 透明
 也送過你一串
@@ -34,7 +24,6 @@ Kong/
 舊記憶
 或者目前沉悶得
 接近死
-
 梧桐將秋色
 無私的給了多壯闊的地
 然而想不起

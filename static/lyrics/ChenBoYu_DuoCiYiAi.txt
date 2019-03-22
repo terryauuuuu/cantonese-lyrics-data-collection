@@ -1,9 +1,4 @@
-
-Lyricist：林夕
-Composer：陳光榮
-Arranger：陳光榮
-監製：陳光榮
-我以為愛
+﻿我以為愛
 誠實便無忌
 卻似勒索
 你那一聲對不起
@@ -27,7 +22,6 @@ Arranger：陳光榮
 置傷者不顧
 你接球接得辛苦
 我發球也發得痛苦
-
 誰多此一愛
 在陷害無辜
 如
@@ -61,15 +55,3 @@ Arranger：陳光榮
 求你不用
 嚴陣以待
 別背負不必要的愛
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">vIcToR</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

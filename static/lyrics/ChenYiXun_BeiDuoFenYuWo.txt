@@ -1,8 +1,4 @@
-
-Lyricist：黃偉文
-Composer：Eric
-Kwok
-靜
+﻿靜
 太安靜
 唱首唱
 來聽聽
@@ -21,7 +17,6 @@ Kwok
 字母歌
 呢喃過
 開始懂得世情
-
 流行曲
 錄下年輕豐盛
 輓歌之聲
@@ -40,15 +35,3 @@ Kwok
 充當引證
 世界看來似乎亦
 很動聽
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">水百合</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

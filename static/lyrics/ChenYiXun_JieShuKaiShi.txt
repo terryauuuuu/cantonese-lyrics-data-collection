@@ -1,12 +1,4 @@
-
-Lyricist：黃偉文
-Composer：韋懋達/韋懋騰
-Arranger：Chinese
-For
-Double
-C.Music
-Group
-過一天
+﻿過一天
 就少一日
 看一章
 就少一幕
@@ -29,8 +21,7 @@ Group
 會否一切
 在最開始
 就已開始結束
-
-＃這一生
+這一生
 或者一出發
 已在歸去
 至少不會
@@ -51,7 +42,3 @@ Group
 方舟
 仍無大陸
 哪可不哭
-Repeat＊
-Repeat＊
-with＃
-

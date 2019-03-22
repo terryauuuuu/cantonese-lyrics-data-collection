@@ -1,9 +1,4 @@
-
-Lyricist：黃貫中
-Composer：黃貫中
-Arranger：黃貫中
-監製：黃貫中
-我仲未哼夠別要停
+﻿我仲未哼夠別要停
 我要你去為我做證
 這片領地照舊擴張
 拒絕扮承認
@@ -26,7 +21,6 @@ Arranger：黃貫中
 要擺就擺到最擺
 
 要玩就玩到最
-high
 我地都係結他湊大
 無賴
 大不了當個信差
@@ -46,7 +40,7 @@ high
 搖擺
 要擺就擺到最擺
 要玩就玩到最
-high
+
 我地都係結他湊大
 無賴
 大不了當個信差
@@ -55,25 +49,3 @@ high
 管他嘴臉多惡緹
 管他真相多嚇鬼
 這是我姿勢
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">WuRaven</font>
-</strong>
-for
-sharing
-the
-lyric.</li><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">henryan</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

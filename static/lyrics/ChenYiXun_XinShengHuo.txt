@@ -1,9 +1,4 @@
-
-Lyricist：黃偉文
-Composer：陳奕迅
-Arranger：李漢金
-監製：王紀華
-這一個字母
+﻿這一個字母
 那一闕樂與怒
 每一個月初的8號
 這一帶別到
@@ -21,7 +16,6 @@ Arranger：李漢金
 某些名共姓
 某餐店的風景
 某一套漫畫主角造型
-
 掃光了物証
 炸毀全部風景
 難道懷念方可以暫停
@@ -38,15 +32,3 @@ Arranger：李漢金
 到底我還有什麼
 就算摧毀掉五千億個
 我心裡還有一個
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">vIcToR</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

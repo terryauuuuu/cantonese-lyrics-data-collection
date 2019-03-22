@@ -1,7 +1,4 @@
-
-Lyricist：孫耀威
-Composer：李偲菘
-Arranger：張兆鴻
+﻿
 彷彿可
 倚
 著
@@ -58,15 +55,3 @@ Arranger：張兆鴻
 難道
 妳
 沒有一絲絲掛念我
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">海豚兒</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

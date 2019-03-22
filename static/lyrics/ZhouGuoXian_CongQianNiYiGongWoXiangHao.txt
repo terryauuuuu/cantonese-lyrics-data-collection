@@ -1,7 +1,4 @@
-
-Lyricist：陸永
-Composer：周國賢
-愛你一世
+﻿愛你一世
 做一生奴隸也無愧
 送你一切
 願交出勞力和錢幣
@@ -40,15 +37,3 @@ Composer：周國賢
 出嫁
 知嗎
 親你像從前小娃娃
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">chelle</font>
-</strong>
-for
-sharing
-the
-lyric.</li></ol>

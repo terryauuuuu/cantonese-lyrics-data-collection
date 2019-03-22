@@ -1,10 +1,4 @@
-
-Lyricist：李敏
-Composer：Ted
-Lo
-Arranger：Ted
-Lo
-*
+﻿
 車駛過美麗城市
 與清秀迷人的妳
 細數那童年瑣碎事
@@ -22,7 +16,4 @@ Lo
 夢妳
 常夢到妳
 像醉倒的心意
-*
-Repeat
-*
 

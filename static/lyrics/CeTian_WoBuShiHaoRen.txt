@@ -1,13 +1,4 @@
-
-Lyricist：黃偉文
-Composer：側田
-(On
-Your
-Mark)
-Arranger：Ted
-Lo
-監製：雷頌德
-明天
+﻿明天
 一早
 待夢境都散去
 王子
@@ -34,11 +25,6 @@ Lo
 當我不足
 給你找到
 我怎麼好
-You
-are
-so
-beautiful
-
 明知
 高攀
 實在攀不到老

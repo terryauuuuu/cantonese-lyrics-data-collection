@@ -1,9 +1,4 @@
-
-Lyricist：周禮茂
-Composer：江港生
-Arranger：陳澤忠
-合唱：許志安/鄭秀文
-友與愛之間
+﻿友與愛之間
 挑選擦出愛火
 某某卻偏看不過
 雖可偷偷的愛
@@ -22,7 +17,6 @@ Arranger：陳澤忠
 說你與我怎麼
 說你與我不可
 
-
 隨便那樣也可
 
 非一般愛火
@@ -35,8 +29,7 @@ Arranger：陳澤忠
 不想有別個
 再說你和我太多
 情就是你我
-Repeat
-＊,＃,△
+
 非一般愛火
 非非一般愛火
 連同是祈望
@@ -57,17 +50,3 @@ Repeat
 不想有別個
 再說你和我太多
 情就是你我
-Repeat
-★
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">周舟</font>
-</strong>
-for
-sharing
-the
-lyric.</li></ol>

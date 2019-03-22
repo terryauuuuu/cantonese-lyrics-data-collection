@@ -1,10 +1,4 @@
-
-Lyricist：Mr.
-Composer：ALAN
-PO
-Arranger：Mr.
-監製：Gary
-Tong
+﻿
 走過了橫街
 經過這門牌
 想起了一支舊結他
@@ -57,15 +51,3 @@ Tong
 自己在惹禍
 避開你是折磨
 好好記住我
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">kchongchong</font>
-</strong>
-for
-sharing
-the
-lyric.</li></ol>

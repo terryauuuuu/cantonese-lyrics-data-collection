@@ -1,8 +1,4 @@
-
-Lyricist：潘偉源
-Composer：George
-Takahash
-Arranger：唐弈聰
+﻿
 星的光點點灑於午夜
 人人開開心心說說故事
 偏偏今宵所想講不太易
@@ -38,17 +34,3 @@ Arranger：唐弈聰
 因我極心癡
 可不可合力延續這故事
 延續這片愛意一生倆相依
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">BerylHu</font>
-<font
-color="#63C094">H</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

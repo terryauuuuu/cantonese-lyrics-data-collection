@@ -1,12 +1,4 @@
-
-Lyricist：陳詠謙
-Composer：Eric
-Kwok
-Arranger：Eric
-Kwok
-監製：Eric
-Kwok
-普羅大眾
+﻿普羅大眾
 過了十八
 膊頭開始重
 追求大勇
@@ -42,7 +34,6 @@ Kwok
 大家都一於少理
 事不關己不肯費力氣
 寧願拿去放屁
-
 請變大
 快樂氣氛
 尖叫吧
@@ -69,10 +60,6 @@ Kwok
 大跳
 為了
 快樂當治療
-Yeah
-Yeah
-Yeah
-...
 誰等著世界變
 誰等著變世界
 你是人

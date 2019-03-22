@@ -1,9 +1,4 @@
-
-Lyricist：黃貫中
-Composer：黃貫中
-Arranger：黃貫中
-監製：黃貫中
-我只好裝出很安靜
+﻿我只好裝出很安靜
 去面對你的堅定
 高不可攀登的生命
 壓碎了你的身影
@@ -16,8 +11,8 @@ Arranger：黃貫中
 我已無法再肯定
 
 若是有天黑有黎明
-REPEAT＊
-＊無去路
+
+無去路
 留不低
 唯可目空一切
 就等一分一秒去枯萎
@@ -33,15 +28,3 @@ REPEAT＊
 REPEAT＊
 仍不令你動搖
 你姿勢
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">WuRaven</font>
-</strong>
-for
-sharing
-the
-lyric.</li></ol>

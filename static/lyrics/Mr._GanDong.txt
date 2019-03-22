@@ -1,15 +1,4 @@
-
-Lyricist：DASH,
-MJ
-Composer：ALAN
-PO,MJ
-Arranger：MR.
-監製：CY
-KONG,
-DAVY
-CHAN,
-GARY
-TONG
+﻿
 凌晨時份
 美麗邂逅放開衣袖
 仍然期待
@@ -31,7 +20,6 @@ TONG
 一秒感動
 也可以忘掉舊刺痛
 為我不再出走
-
 
 當天際暗淡
 人越掛念退色溫柔

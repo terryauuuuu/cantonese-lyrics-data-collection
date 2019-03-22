@@ -1,11 +1,4 @@
-
-Lyricist：林寶
-Composer：Eric
-Kwok
-/
-Jerald
-Arranger：Swing
-我大概
+﻿我大概
 這份人
 冇樣正
 正在嗰股氣質
@@ -31,7 +24,6 @@ Arranger：Swing
 嚇壞人
 遺憾我
 已經不懂降級
-
 人暴發
 其實要威風
 多闊綽都得
@@ -54,15 +46,3 @@ Arranger：Swing
 講真我亦冇
 只好仰慕
 皆因冇就冇
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">Caramel</font>
-</strong>
-for
-sharing
-the
-lyric.</li></ol>

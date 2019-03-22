@@ -1,10 +1,4 @@
-
-Lyricist：黃偉文
-Composer：Eric
-Kwok
-Arranger：Eric
-Kwok
-聞說你
+﻿聞說你
 時常在下午
 來這裡寄信件
 逢禮拜
@@ -47,7 +41,6 @@ Kwok
 全城來撞你
 但最後
 處處有險阻
-
 只差一點點
 即可以
 再會面

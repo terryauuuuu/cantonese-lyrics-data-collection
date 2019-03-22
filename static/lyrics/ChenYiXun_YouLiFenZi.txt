@@ -1,4 +1,4 @@
-
+﻿
 吻你
 嘴巴中呼吸空氣
 一秒停頓
@@ -41,7 +41,7 @@
 最美
 一消失
 不會等你
-#愛看似是沒了期
+愛看似是沒了期
 要說永遠
 偏偏不合理
 愛上了你卻在我心中已預期
@@ -49,18 +49,3 @@
 懷念你
 尋覓你
 卻未忘記你
-#
-Repeat
-#
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">野口</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

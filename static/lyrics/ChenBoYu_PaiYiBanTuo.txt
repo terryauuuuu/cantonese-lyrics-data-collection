@@ -1,7 +1,4 @@
-
-Lyricist：林夕
-Composer：陳曼琪
-明知你只懂得愛自己
+﻿明知你只懂得愛自己
 誰都似會更配得起你
 其實尚要怎預備
 適應了心理
@@ -28,7 +25,6 @@ Composer：陳曼琪
 何不以我去計出分數
 人人亦要給第二好找最好
 如能鑒辨次貨便更高
-
 人只得一個
 情趣太多
 而手得一對
@@ -63,15 +59,3 @@ Composer：陳曼琪
 你會贈亞軍給我
 難道你有日投入漩渦
 要答謝我的切磋
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">artit</font>
-</strong>
-for
-sharing
-the
-lyric.</li></ol>

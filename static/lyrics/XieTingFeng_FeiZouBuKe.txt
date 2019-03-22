@@ -1,7 +1,4 @@
-
-Lyricist：林夕
-Composer：伍樂城
-不捨得傷心
+﻿不捨得傷心
 傷心怎將妳抱起
 不捨得開心
 留來給妳歡喜
@@ -28,15 +25,3 @@ Composer：伍樂城
 回頭路窄
 然而肉眼總找得到
 要走得比妳早
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">hui85my</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

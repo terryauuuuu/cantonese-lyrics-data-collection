@@ -1,8 +1,4 @@
-
-Lyricist：黃偉文
-Composer：Eric
-Kwok
-朋友我當你一秒朋友
+﻿朋友我當你一秒朋友
 朋友我當你一世朋友
 奇怪過去再不堪回首
 懷緬時時其實還有
@@ -62,17 +58,3 @@ Kwok
 或者自己早就想通透
 來年陌生的是昨日最親的某某
 總好於那日我沒有沒有遇過某某
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">auyeung</font>
-<font
-color="#63C094">KAI</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

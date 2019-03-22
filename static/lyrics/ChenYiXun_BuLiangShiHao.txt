@@ -1,11 +1,4 @@
-
-Lyricist：黃偉文
-Composer：林一峰
-Arranger：林一峰/Edward
-Chan
-監製：Alvin
-Leong
-茶和咖啡
+﻿茶和咖啡
 同樣供給刺激
 可惜世上
 唯有煙
@@ -36,7 +29,6 @@ Leong
 這問題
 由我講
 我搞清楚已久
-
 早知快樂和有益
 就似水碰著油
 不可以一起擁有

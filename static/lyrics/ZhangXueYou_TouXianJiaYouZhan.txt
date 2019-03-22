@@ -1,9 +1,4 @@
-
-Lyricist：潘源良
-Composer：Freddie
-Perren/Christine
-Yarian
-這一刻
+﻿這一刻
 你若然
 覺得
 孤單
@@ -26,16 +21,16 @@ Yarian
 心裡面
 許多許多空間
 讓思想可短暫偷懶
-(可以偷懶)
+可以偷懶
 
 誰人都
 應該找到
 加油站
 讓你我
 忘懷重重期限
-(
+
 人原是有限
-別再增加現有的界限)
+別再增加現有的界限
 來思想一個
 甜蜜快餐
 誰人都
@@ -48,15 +43,3 @@ Yarian
 誰人都
 應該找到
 加油站
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">周舟</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

@@ -1,7 +1,4 @@
-
-Lyricist：劉卓輝
-Composer：劉諾生
-忘記他
+﻿忘記他
 忘記她
 讓滿腔憂鬱退下
 沒有花
@@ -67,15 +64,3 @@ Composer：劉諾生
 夜雨灑
 雷雨打
 力竭聲嘶的唱吧
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">周舟</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

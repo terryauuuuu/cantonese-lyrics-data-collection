@@ -1,7 +1,4 @@
-
-Lyricist：林夕
-Composer：陳偉
-我沒有我沒有沒有
+﻿我沒有我沒有沒有
 從運氣到信心到天空宇宙全屬某某
 未明何處有售
 我沒有理會有沒有
@@ -47,15 +44,3 @@ Composer：陳偉
 連天都知這瑣碎悲哀背後
 一切都不算得罕有
 其實我跟你都不算得罕有
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">JC</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

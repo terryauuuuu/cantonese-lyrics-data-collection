@@ -1,7 +1,4 @@
-
-Lyricist：陳嘉國
-Composer：Kenjiro/Sakiya/Y.Akmoto
-不應該
+﻿不應該
 假意親我
 若要講
 不要再拖
@@ -20,14 +17,9 @@ Composer：Kenjiro/Sakiya/Y.Akmoto
 無謂強續延
 你莫愚弄我
 求求你
-listen
-to
-my
-situation
 你柔情蜜意
 已變質
 似一根倒剌
-
 一顆心
 給你傷透
 但強忍

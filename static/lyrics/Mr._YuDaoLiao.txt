@@ -1,15 +1,4 @@
-
-Lyricist：RONNY
-Composer：ALAN
-PO
-Arranger：MR.
-監製：CY
-KONG,
-DAVY
-CHAN,
-GARY
-TONG
-是你手
+﻿是你手
 把哀愁驅走
 溫柔多細膩
 伴你走
@@ -33,7 +22,6 @@ TONG
 沿途亦抱緊你
 不懂分離
 此刻願共你一起
-
 千萬年人和人遇過了
 怎相信同行仍遇上了
 這邂逅

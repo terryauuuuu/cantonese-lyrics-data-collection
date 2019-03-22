@@ -1,7 +1,4 @@
-
-Lyricist：黃偉文
-Composer：周國賢
-Arranger：Zarahn
+﻿
 不要走
 不要走
 你別太早走
@@ -72,7 +69,7 @@ Arranger：Zarahn
 飯要開
 無謂說真話
 回家post個
-「嬲嬲」足夠
+嬲嬲足夠
 我是時候自戴手扣
 豐功偉業
 代你管理

@@ -1,7 +1,4 @@
-
-Lyricist：林夕
-Composer：Vincent
-Chow
+﻿
 多意外
 在日落大道的你與我握手
 輕輕說
@@ -62,15 +59,3 @@ Chow
 講再見
 但無情像你般
 未見
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">Kinreo</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

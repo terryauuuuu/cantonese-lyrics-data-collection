@@ -1,12 +1,4 @@
-
-Lyricist：林夕
-Composer：Eric
-Kwok
-Arranger：Eric
-Kwok
-監製：Eric
-Kwok
-多經典的歌后
+﻿多經典的歌后
 一霎眼已走
 纏綿著青蔥的山丘
 轉眼變蟻丘
@@ -32,7 +24,6 @@ Kwok
 卻是近黃昏
 高峰的快感
 剎那失陷
-
 風花雪月不肯等人
 要獻便獻吻
 多風光的海島

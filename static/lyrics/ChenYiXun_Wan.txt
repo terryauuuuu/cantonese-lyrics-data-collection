@@ -1,8 +1,4 @@
-
-Lyricist：林寶
-Composer：Eric
-Kwok
-Arranger：Swing
+﻿
 一刻心也跳著
 命能懸著
 尚能延著
@@ -12,8 +8,7 @@ Arranger：Swing
 照樣漫長
 塵寰未了
 沒有路撒手歸向
-從來從來病床一張
-就算已躺上
+從來從來病床一張就算已躺上
 點滴再響
 但意志高漲
 雖已走向

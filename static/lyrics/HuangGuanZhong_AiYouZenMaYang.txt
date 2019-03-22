@@ -1,9 +1,4 @@
-
-Lyricist：黃貫中
-Composer：黃貫中
-Arranger：黃貫中
-監製：黃貫中
-算了
+﻿算了
 說了
 就算說罷了
 你怎會聽這謊話
@@ -34,7 +29,7 @@ Arranger：黃貫中
 喊了
 就喊喊罷了
 就認為是學會了
-﹡要笑
+要笑
 要哭
 怎可以隱瞞
 你說
@@ -48,16 +43,3 @@ Arranger：黃貫中
 我偏偏就要講
 我愛你愛你
 但愛又怎麼樣
-﹡REPEAT
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">WuRaven</font>
-</strong>
-for
-sharing
-the
-lyric.</li></ol>

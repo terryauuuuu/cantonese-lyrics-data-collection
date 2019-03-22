@@ -1,8 +1,4 @@
-
-Lyricist：劉卓輝
-Composer：徐偉賢
-Arranger：劉志遠
-愛上了
+﻿愛上了
 看見你
 如何不懂謙卑
 去講心中理想
@@ -21,7 +17,6 @@ Arranger：劉志遠
 總要飛
 道別不可再等你
 不管有沒有機
-
 給我體貼入微
 但你手
 如明日便要遠離
@@ -43,15 +38,3 @@ Arranger：劉志遠
 還是你
 如重溫往日遊記
 但會否疲倦了嬉戲
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">W</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>

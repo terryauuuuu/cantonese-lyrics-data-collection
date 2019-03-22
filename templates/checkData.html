@@ -34,11 +34,114 @@
     <script src="{{ url_for('static', filename='playerjs.js') }}"></script>
     <script src="{{ url_for('static', filename='loading.js') }}"></script>
     <link href="{{ url_for('static', filename='loading.css') }}" rel="stylesheet">
+
+    <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+    </style>
 </head>
 
 <body>
     <h1>Number OF Data Collected: {{count_result}}</h1>
-    <H1>Data List:</H1>
+    <h1>Unfinished:{{remain_result}} </h1> 
     <br>
-    {{result}}
+    <div class= "dataTable">
+        <table>
+        <tr> 
+                <th>  ID </th>
+                <th>  index_id </th>
+                <th>  singer </th>
+                <th>  songName </th>
+                <th>  start </th>
+                <th>  end </th>
+                <th>  lyrics</th>
+                <th>  isNotLyrics </th>
+                <th>  isValidate </th>
+                <th>  submitDate </th>
+        </tr>
+        {% for eachRecord in result %}
+        <tr> 
+                <th>  {{eachRecord.id}} </th>
+                <th>  {{eachRecord.index_id}} </th>
+                <th>  {{eachRecord.singer}} </th>
+                <th>  {{eachRecord.songName}} </th>
+                <th>  {{eachRecord.start}} </th>
+                <th>  {{eachRecord.end}} </th>
+                <th>  {{eachRecord.lyrics}} </th>
+                <th>  {{eachRecord.isNotLyrics}} </th>
+                <th>  {{eachRecord.isValidate}} </th>
+                <th>  {{eachRecord.submitDate}} </th>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+<script>
+    
+$(function(){
+    var testing = '{{result}}';
+    console.log(testing)
+    testing = testing.substr(1).slice(0,1)
+
+    console.log(JSON.parse(testing))
+
+var tmp =[]
+    // {% for eachRecord in result %}
+    //           tmp.push({{eachRecord}})
+    // {% endfor %}
+
+    var testing =  $(".dataTable").html().
+
+    // console.log(testing)
+    testing = unescape(encodeURIComponent(testing));
+//     // testing = testing.substr(0).slice(0,0)
+//     // testing = testing.replace(/([a-zA-Z0-9]+?):/g, '"$1":');
+//     // testing = testing.replace(/'/g, '"');
+    console.log(testing)
+    // testing= JSON.parse(testing);
+    // console.log(testing)
+// 
+//     var parser = new JSONParser();
+//     var parsedData = parser.parse(testing);
+//     var length = parsedData.length;
+//     var userIDArray = [];
+//     var nameArray = [];
+
+// for(var i=0;i<length;i++){
+//     userIDArray.push(parsedData[i].id.toString());
+//     nameArray.push(parsedData[i].index_id.toString());
+// }
+// console.log(userIDArray)
+
+
+    // reault_all = result.map(obj=>{
+    //     return ('<tr>' + 
+    //             '<th>' + obj.id + "</th>" +
+    //             '<th>' + obj.index_id + "</th>" +
+    //             '<th>' + obj.singer + "</th>" +
+    //             '<th>' + obj.songName + "</th>" +
+    //             '<th>' + obj.start + "</th>" +
+    //             '<th>' + obj.end + "</th>" +
+    //             '<th>' + obj.lyrics + "</th>" +
+    //             '<th>' + obj.isNotLyrics + "</th>" +
+    //             '<th>' + obj.isValidate + "</th>" +
+    //             '<th>' + obj.submitDate + "</th>" +
+    //             '</tr>'
+    //             )
+    // })
+
+    // reault_all = reault_all.join("")
+    $(".dataTable").html(testing)
+})
+</script>
 </body>

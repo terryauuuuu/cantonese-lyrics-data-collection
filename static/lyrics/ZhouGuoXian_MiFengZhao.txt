@@ -1,8 +1,4 @@
-
-Lyricist：藍奕邦
-Composer：周國賢
-Arranger：陳輝陽
-叫過我數百次我也未懂反應
+﻿叫過我數百次我也未懂反應
 摑了我數百下我也未叫暫停
 從疲倦的冷眼
 凝望世間無情
@@ -42,15 +38,3 @@ Arranger：陳輝陽
 棲身凡塵
 誰個錯用情感
 等於犯禁
-
-<ol><li>
-Special
-thanks
-to
-<strong><font
-color="#638DC0">vc</font>
-</strong>
-for
-correcting
-the
-lyric.</li></ol>
