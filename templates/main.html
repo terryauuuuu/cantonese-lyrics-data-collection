@@ -9,6 +9,7 @@
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -224,30 +225,21 @@ $(function(){
     var songNames = "{{songNames}}"
     var lyricsArray =[]
     var player = document.getElementById('player');  
-    var startInterval =  startTime > 5 ? 5 : 0 
+    var startInterval =  startTime >= 5 ? 5 :startTime; 
     var durationInterval = endTime - startTime
-    var endInterval =  (duration -  endTime > 0 ? 5 : 0 )
+    var endInterval =(duration -  endTime) > 5 ?  5 : 0 
     var tmpCurrentTime = startInterval
-    var audioPlayDuration= (durationInterval - startInterval -endInterval)
+    var audioPlayDuration= (durationInterval)
     var audioState = 'pause'
     var audioSource = '{{audioSource}}'
     var $player = $('.player');
-
-    // var wavesurfer = WaveSurfer.create({
-    //     container: '#waveform',
-    //     waveColor: 'violet',
-    //     progressColor: 'purple'
-    // });
-    
-    // wavesurfer.load(audioSource);
-    // wavesurfer.on('ready', function () {
-    //     wavesurfer.play();
-    // });
 
     console.log("index: "+ index)
     console.log("startTime: "+ startTime)
     console.log("endTime: "+ endTime)
     console.log("duration: " + duration)
+    console.log("duration -  endTime: "+ (duration -  endTime))
+    console.log("startInterval: " + startInterval)
     console.log("endInterval: " + endInterval)
     console.log("durationInterval: " + durationInterval)
     console.log("tmpCurrentTime: " + tmpCurrentTime)
@@ -284,7 +276,7 @@ $(function(){
     $( "#slider-range" ).slider({
         range: true,
         min: 0-startInterval,
-        max: 5+audioPlayDuration,
+        max: endInterval+audioPlayDuration,
         step: 0.1,
         values: [ 0, audioPlayDuration],
         animate: "fast",
@@ -295,7 +287,7 @@ $(function(){
             audioPlayDuration = totalLength
             tmpCurrentTime = startInterval-head
             pauseAudio();
-            loadSound();
+            // loadSound();
             $('.startTime').html(sigFig(ui.values[0]))
             $('.endTime').html(sigFig(ui.values[1]))
             $(".timeDuration").html(sigFig(totalLength));
@@ -312,13 +304,13 @@ $(function(){
 
 //handle reset button 
     $(".reset-btn").click(function() {
-        audioPlayDuration= (durationInterval - startInterval -endInterval)
+        audioPlayDuration= (durationInterval )
         tmpCurrentTime = startInterval
         $( "#slider-range" ).slider({
             values: [ 0, audioPlayDuration],
         });
         pauseAudio();
-        loadSound();
+        // loadSound();
         $('.startTime').html(sigFig(0))
         $('.endTime').html(sigFig(audioPlayDuration))
         $(".timeDuration").html(sigFig(audioPlayDuration));
@@ -344,25 +336,23 @@ $(function(){
     
     function btnPanel(startVar,endVar){
         var min = 0-startInterval;
-        var max = 5+audioPlayDuration;
+        var max = endInterval+durationInterval;
         var start = parseFloat($('.startTime').text())
         var end = parseFloat($('.endTime').text())
         var resetStart = sigFig(start - startVar)
         var resetEnd = sigFig(end - endVar)
 
-        if(resetStart >= min  && resetEnd <= max && resetEnd > resetStart ){
+        if(resetStart >= min  && resetEnd <= max &&  parseFloat(resetEnd) > parseFloat(resetStart) ){
             $('.startTime').html(resetStart)
             $('.endTime').html(resetEnd)
             var head =  parseFloat(resetStart * -1);
             var totalLength = parseFloat(resetEnd) + head
             audioPlayDuration = totalLength
             tmpCurrentTime = startInterval-head
-            console.log(tmpCurrentTime)
-            console.log(audioPlayDuration)
             $('.startTime').html(resetStart)
             $(".timeDuration").html(sigFig(audioPlayDuration));
             pauseAudio();
-            loadSound();
+            // loadSound();
             $( "#slider-range" ).slider({
                 values: [ resetStart , resetEnd],
             });
@@ -389,7 +379,7 @@ $(function(){
         var content =  '<strong>呢段歌詞如下:</strong><br><br>'
         content= $('.hasLyrics').is(':checked') ? content + '段野無歌詞/唔喺廣東話嚟' : content +  $('.lyrics-input').val()
         
-        var sendStartTime = parseFloat(startTime) + parseFloat($('.startTime').text()) + parseFloat(startInterval)
+        var sendStartTime = parseFloat(startTime) + parseFloat($('.startTime').text())
         var sendEndTime = sendStartTime +  parseFloat($(".timeDuration").text())
 
         console.log("sendStartTime")
@@ -403,8 +393,8 @@ $(function(){
             btn_align : 'right',
             effect : 'none',
             default_btns : {
-                ok : '提交',
-                cancel:'諗諗'
+                cancel:'諗諗',
+                ok : '提交'
             }
         },
         function(param){
@@ -417,6 +407,7 @@ $(function(){
 
 $('.play-button').on('click', function() {
     if(audioState !== 'play'){
+        loadSound();
         playAudio()
     }else{
         pauseAudio();
@@ -461,11 +452,11 @@ function loadSound(){
 }
     //re-initialize the stuufs once a new song incoming
     function init(){
-        startInterval =  startTime > 5 ? 5 : 0 
+        startInterval =  startTime > 5 ? 5 : startTime
         durationInterval = endTime - startTime
         endInterval =  (duration -  endTime > 5 ? 5 : 0 )
         tmpCurrentTime = startInterval
-        audioPlayDuration= durationInterval - startInterval -endInterval
+        audioPlayDuration= durationInterval 
         audioState = 'pause'
        
         // initialize correct interval of the audio
@@ -479,12 +470,11 @@ function loadSound(){
 
         $( "#slider-range" ).slider({
             min: 0-startInterval,
-            max: 5+audioPlayDuration,
+            max: endInterval+audioPlayDuration,
             values: [ 0, audioPlayDuration],
         });
 
         pauseAudio();
-        loadSound();
         $('.startTime').html(sigFig(0))
         $('.endTime').html(sigFig(audioPlayDuration))
         $(".timeDuration").html(sigFig(audioPlayDuration));
@@ -494,7 +484,7 @@ function loadSound(){
     // submit data function
     function submitData() {
         pauseAudio();
-        var sendStartTime = parseFloat(startTime) + parseFloat($('.startTime').text()) + parseFloat(startInterval)
+        var sendStartTime = parseFloat(startTime) + parseFloat($('.startTime').text())
         var sendEndTime = sendStartTime +  parseFloat($(".timeDuration").text())
 
         $('body').loading({message: 'Send緊上Server...'});

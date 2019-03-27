@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<title>{% block title %}{% endblock %}FYP填歌網</title>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    
+    <link href="{{ url_for('static', filename='mdb/css/style.css') }}" rel="stylesheet">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <link href="{{ url_for('static', filename='mdb/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='mdb/css/mdb.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='playercss.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='loading.js') }}"></script>
+    <link href="{{ url_for('static', filename='loading.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='popupmodal/js/popupmodal.js') }}"></script>
+    <link href="{{ url_for('static', filename='popupmodal/css/popupmodal.css') }}" rel="stylesheet">
+    
+    <script src="{{ url_for('static', filename='SnackBar/dist/snackbar.min.js') }}"></script>
+    <link href="{{ url_for('static', filename='SnackBar/dist/snackbar.min.css') }}" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.spatial.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.default.css" rel="stylesheet">
+    <!-- <script src="https://unpkg.com/wavesurfer.js"></script> -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <div class="row-eq-height">
+                <div class="col-xs-2 top-left-icon">
+                <img class ="center" src="https://img.icons8.com/ios/100/000000/musical-notes-filled.png" width="50" height="50" class="d-inline-block align-top" alt="">
+                </div>
+                <div class="col-xs-10">
+                    <div class="nav-title" href="#">
+                        多謝支持廣東歌
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav> 
+
+    <!-- <div id="waveform"></div> -->
+
+    <div class="container">
+        <div class="card bg-light">
+            <div class="card-header"> 
+                1. 聽下呢首歌某一Part
+            </div>
+            <div class="card-body">
+
+                <div class="player-wrap">
+                    <div class="player paused">
+                    <div class="progress-bar">
+                        <div class="runner"></div>
+                    </div>
+                    <div class="album-art">
+                        <div class="cover"></div>
+                    </div>
+
+                    <div class="description">
+                        <div class="title songNames_zh">{{songNames_zh}} </div>
+                        <div class="sub-title singers_zh">{{singers_zh}} </div>
+                    </div>
+                        
+                    <div class="play-button">
+                            <div class="lp-background"></div>
+                            <i class="mdi mdi-play"></i>
+                            <i class="mdi mdi-pause"></i>
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class= "input-lyrics-fluid">
+        <div class="card bg-light">
+                <div class="card-header">2. (如播唔曬成句)可調教下首歌頭尾時間</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <p class="timer-text">開頭: <span class="startTime"></span></p>
+                    </div>
+                    <div class="col">
+                        <p class="timer-text">結尾: <span class="endTime"></span></p>
+                    </div>
+                    <div class="col">
+                        <p class="timer-text">長度: <span class="timeDuration">秒</span></p>
+                    </div>
+                </div>
+                <hr class="timer-hr">
+                <div class ="slider-range" id="slider-range"></div>
+                <button class ="reset-btn btn btn-success center" >Reset</button>  
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class= "input-lyrics-fluid">
+            <div class="card bg-light">
+                <div class="card-header">3. 寫低段歌詞 </div>
+            <div class="card-body">
+                <div class ="sub-input-grp">
+                    <button type="button" id="button_bw" class="sub-input-btn forwd-start-btn">
+                        <i class="fa fa-backward"></i>
+                    </button>
+                    
+                    <button type="button" id="button_bw" class="sub-input-btn backwd-start-btn">
+                        <i class="fa fa-forward"></i>
+                    </button>
+
+                    <button type="button" id="button_play" class="sub-input-btn sub-play-btn play-button" >
+                        <i class="fa fa-play"></i>
+                    </button>
+                    
+                    <button type="button" id="button_bw" class="sub-input-btn forwd-end-btn">
+                        <i class="fa fa-backward"></i>
+                    </button>
+                    
+                    <button type="button" id="button_bw" class="sub-input-btn backwd-end-btn">
+                        <i class="fa fa-forward"></i>
+                    </button>
+                </div>
+                <input class = 'lyrics-input' id="input-tags" type='text'>
+                <div class ="lyrics-input-remark" >
+                    <p class="card-text">
+                        ** 如果有嘢要改,click下
+                        <span class = "lyrics-input-remark-red">Backspace</span>
+                        就得㗎喇
+                    </p>
+                </div>
+                <hr class="timer-hr">
+                <h5 class="card-title">4. 如果無歌詞，麻煩剔下呢格</h5>
+                <div class= "input-Lyrics center">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input hasLyrics" id="customCheck1" name="hasLyrics" value="true">
+                        <label class="custom-control-label" for="customCheck1">段野無歌詞/ 唔喺廣東話嚟啵</label>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div> 
+    </div> 
+
+    <!-- <div class="container">
+        <div class= "input-lyrics-fluid">
+            <div class="card bg-light">
+                <div class="card-header">4. 如果無歌詞，麻煩剔下呢格</div>
+            <div class="card-body input-Lyrics-area">
+                <div class= "input-Lyrics center">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input hasLyrics" id="customCheck1" name="hasLyrics" value="true">
+                        <label class="custom-control-label" for="customCheck1">段野無歌詞/唔喺廣東話嚟啵</label>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container">
+            <div class= "input-lyrics-fluid">
+                <div class="card bg-light">
+                    <div class="card-header">5. 搞掂</div>
+                <div class="card-body">
+                    無問題既，禁粒Button 就可以繼續下一段錄音，多謝大家幫手！！
+                </div>
+                </div>
+            </div>
+        </div>
+
+    <div class= "submit-button-outer submit-btn">
+        <button class ="submit-button btn btn-primary btn-lg center" >下一首</button>  
+    </div>
+
+
+    <footer class="page-footer font-small blue">
+        <div class="footer-copyright text-center py-3">
+            Declaration: Data collected shall be used purely for academic purpose only. 
+        </div>
+    </footer>
+
+
+<script>
+$(function(){
+
+//decleare variable
+    var index = {{index}};
+    var startTime = {{startTime}}
+    var endTime = {{endTime}}
+    var duration = {{duration}}
+    var index = {{index}}
+    var singers ='{{singers}}'
+    var songNames = "{{songNames}}"
+    var lyricsArray =[]
+    var player = document.getElementById('player');  
+    var startInterval =  startTime >= 5 ? 5 :startTime; 
+    var durationInterval = endTime - startTime
+    var endInterval =(duration -  endTime) > 5 ?  5 : 0 
+    var tmpCurrentTime = startInterval
+    var audioPlayDuration= (durationInterval)
+    var audioState = 'pause'
+    var audioSource = '{{audioSource}}'
+    var $player = $('.player');
+
+    console.log("index: "+ index)
+    console.log("startTime: "+ startTime)
+    console.log("endTime: "+ endTime)
+    console.log("duration: " + duration)
+    console.log("duration -  endTime: "+ (duration -  endTime))
+    console.log("startInterval: " + startInterval)
+    console.log("endInterval: " + endInterval)
+    console.log("durationInterval: " + durationInterval)
+    console.log("tmpCurrentTime: " + tmpCurrentTime)
+    console.log("audioPlayDuration: "+ audioPlayDuration)
+
+    var sound ;
+    loadSound();
+
+    var data = [
+            {% for eachLine in lyrics %}
+               '{{eachLine}}',
+            {% endfor %}
+            ''
+    ]
+    var items = data.map(function(x) { return { item: x }; });
+
+    $('#input-tags').selectize({
+        plugins: ['restore_on_backspace'],
+        delimiter: '',
+        persist: true,
+        maxItems: null,
+        options: items,
+        labelField: "item",
+        valueField: "item",
+        searchField: 'item',
+        createOnBlur: true,
+        create: function(input) {
+            return {
+                item: input,
+            }
+        }
+    });
+
+    $( "#slider-range" ).slider({
+        range: true,
+        min: 0-startInterval,
+        max: endInterval+audioPlayDuration,
+        step: 0.1,
+        values: [ 0, audioPlayDuration],
+        animate: "fast",
+        slide: function( event, ui ) {
+
+            var head =  (ui.values[0] * -1);
+            var totalLength = ui.values[1] + head
+            audioPlayDuration = totalLength
+            tmpCurrentTime = startInterval-head
+            pauseAudio();
+            // loadSound();
+            $('.startTime').html(sigFig(ui.values[0]))
+            $('.endTime').html(sigFig(ui.values[1]))
+            $(".timeDuration").html(sigFig(totalLength));
+
+        }
+    });
+
+
+// initialize correct interval of the audio
+    $('.startTime').html("0.00")
+    $('.endTime').html(sigFig(audioPlayDuration))
+    $(".timeDuration").html(sigFig(audioPlayDuration))
+    $(".hasLyrics").prop("checked", false);
+
+//handle reset button 
+    $(".reset-btn").click(function() {
+        audioPlayDuration= (durationInterval )
+        tmpCurrentTime = startInterval
+        $( "#slider-range" ).slider({
+            values: [ 0, audioPlayDuration],
+        });
+        pauseAudio();
+        // loadSound();
+        $('.startTime').html(sigFig(0))
+        $('.endTime').html(sigFig(audioPlayDuration))
+        $(".timeDuration").html(sigFig(audioPlayDuration));
+    });
+
+//fast-top-end-button
+    $(".forwd-start-btn").click(function() {
+        btnPanel(0.1,0);
+    });
+
+    $(".backwd-start-btn").click(function() {
+        btnPanel(-0.1,0);
+    });
+
+    $(".forwd-end-btn").click(function() {
+        btnPanel(0,0.1);
+    });
+
+    $(".backwd-end-btn").click(function() {
+        btnPanel(0,-0.1);
+    });
+
+    
+    function btnPanel(startVar,endVar){
+        var min = 0-startInterval;
+        var max = endInterval+durationInterval;
+        var start = parseFloat($('.startTime').text())
+        var end = parseFloat($('.endTime').text())
+        var resetStart = sigFig(start - startVar)
+        var resetEnd = sigFig(end - endVar)
+
+        if(resetStart >= min  && resetEnd <= max &&  parseFloat(resetEnd) > parseFloat(resetStart) ){
+            $('.startTime').html(resetStart)
+            $('.endTime').html(resetEnd)
+            var head =  parseFloat(resetStart * -1);
+            var totalLength = parseFloat(resetEnd) + head
+            audioPlayDuration = totalLength
+            tmpCurrentTime = startInterval-head
+            $('.startTime').html(resetStart)
+            $(".timeDuration").html(sigFig(audioPlayDuration));
+            pauseAudio();
+            // loadSound();
+            $( "#slider-range" ).slider({
+                values: [ resetStart , resetEnd],
+            });
+        }
+        Snackbar.show({
+            text: '首歌會喺 ' + resetStart  +' 秒播, ' + resetEnd + " 秒完",
+            duration: 3000});
+    }
+// handle clicking box
+    $(".input-Lyrics-area").click(function() {
+        if ($('.hasLyrics').is(':checked')){
+            $(".hasLyrics").prop("checked", false);
+            $(".lyrics-input").prop('disabled', false);
+            $(".slider-range").prop('disabled', false);
+        }else{
+            $(".hasLyrics").prop("checked", true );
+            $(".lyrics-input").prop('disabled', true);
+            $(".slider-range").prop('disabled', true);
+        }
+    });
+
+// submit button click function
+    $(".submit-button").click(function(){
+        var content =  '<strong>呢段歌詞如下:</strong><br><br>'
+        content= $('.hasLyrics').is(':checked') ? content + '段野無歌詞/唔喺廣東話嚟' : content +  $('.lyrics-input').val()
+        
+        var sendStartTime = parseFloat(startTime) + parseFloat($('.startTime').text())
+        var sendEndTime = sendStartTime +  parseFloat($(".timeDuration").text())
+
+        console.log("sendStartTime")
+        console.log(sendStartTime)
+        console.log("sendEndTime")
+        console.log(sendEndTime)
+
+        popup.confirm({ 
+            content: content,
+            keyboard : false,
+            btn_align : 'right',
+            effect : 'none',
+            default_btns : {
+                cancel:'諗諗',
+                ok : '提交'
+            }
+        },
+        function(param){
+            if(param.proceed){
+                submitData()
+            }
+        });
+    });
+
+
+$('.play-button').on('click', function() {
+    if(audioState !== 'play'){
+        loadSound();
+        playAudio()
+    }else{
+        pauseAudio();
+    }
+});
+
+function pauseAudio(){
+    if(audioState === 'play'){
+        $player.removeClass('playing').toggleClass('paused');
+        $(".sub-play-btn").removeClass('btn-success'); 
+        $(".sub-play-btn > i").removeClass('fa fa-pause').toggleClass('fa fa-play');
+    }
+    sound.pause();
+    audioState = 'pause'
+    
+}
+
+function playAudio(){
+    sound.play('playTime');
+    $(".sub-play-btn").toggleClass('btn-success'); 
+    $(".sub-play-btn > i").removeClass('fa fa-play').toggleClass('fa fa-pause');
+    $player.removeClass('paused').toggleClass('playing');
+    audioState = 'play'
+}
+
+function loadSound(){
+    sound = new Howl({
+                src: audioSource,
+                html5: true,
+                sprite: {
+                    playTime: [tmpCurrentTime*1000, audioPlayDuration*1000],
+                }
+            });       
+    sound.once('load', function(){
+        
+    });
+
+    sound.on('end', function(){
+        console.log('Finished!');
+        pauseAudio();
+    });
+}
+    //re-initialize the stuufs once a new song incoming
+    function init(){
+        startInterval =  startTime > 5 ? 5 : startTime
+        durationInterval = endTime - startTime
+        endInterval =  (duration -  endTime > 5 ? 5 : 0 )
+        tmpCurrentTime = startInterval
+        audioPlayDuration= durationInterval 
+        audioState = 'pause'
+       
+        // initialize correct interval of the audio
+        $(".startRange").val(0);
+        $(".endRange").val(0);
+        $('.startTime').html("0")
+        $('.endTime').html("0")
+        $(".hasLyrics").prop("checked", false);
+        $(".lyrics-input").prop('disabled', false);
+        $(".slider-range").prop('disabled', false);
+
+        $( "#slider-range" ).slider({
+            min: 0-startInterval,
+            max: endInterval+audioPlayDuration,
+            values: [ 0, audioPlayDuration],
+        });
+
+        pauseAudio();
+        $('.startTime').html(sigFig(0))
+        $('.endTime').html(sigFig(audioPlayDuration))
+        $(".timeDuration").html(sigFig(audioPlayDuration));
+
+    }
+
+    // submit data function
+    function submitData() {
+        pauseAudio();
+        var sendStartTime = parseFloat(startTime) + parseFloat($('.startTime').text())
+        var sendEndTime = sendStartTime +  parseFloat($(".timeDuration").text())
+
+        $('body').loading({message: 'Send緊上Server...'});
+                    var postJSON = {
+            singer:singers,
+            songName:songNames,
+            start:sendStartTime,
+            end: sendEndTime,
+            lyrics:$('.lyrics-input').val(),
+            isNotLyrics:$('.hasLyrics').is(':checked'),
+            index: index,
+            submitDate: new Date()
+        }
+        $.ajax({
+            url: "/submit_data",
+            type: "POST",
+            data: postJSON,
+            success: function(res) {
+
+                res = JSON.parse(res)
+                songNames = res.songNames
+                singers = res.singers
+                startTime = res.startTime
+                endTime = res.endTime
+                index = res.index
+                duration = res.duration
+                audioSource = res.audioSource
+                $('.songNames_zh').html(res.songNames_zh)
+                $('.singers_zh').html(res.singers_zh)
+                $('.lyrics-input').val('')
+
+                var newData = []
+                x = res.lyrics.map(function(val,index) {
+                    newData.push(val)
+                });
+                
+                var items = newData.map(function(x) { return { item: x }; });
+                var selectize = $("#input-tags")[0].selectize;
+                selectize.clear();
+                selectize.clearOptions();
+                selectize.load(function(callback) {
+                    callback(items);
+                });
+
+                init();
+            
+                $('body').loading({
+                    theme: 'dark',
+                    message: '搞掂!多謝你呀!有下一首啦!',
+                    stoppable: true
+                });
+
+                setTimeout(function(){
+                    $('body').loading('stop');
+                    $(window).scrollTop(0);
+                }, 1500);
+            },
+            error: function(xhr) {
+                //Do Something to handle error
+            }
+        });
+    }; 
+    
+    function sigFig(x) {
+        return Number.parseFloat(x).toFixed(2);
+    }
+
+
+});
+</script>
+</body>
